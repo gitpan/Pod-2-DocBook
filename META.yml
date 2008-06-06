@@ -1,0 +1,17 @@
+--- #YAML:1.0
+name:                Pod-2-DocBook
+version:             0.01_01
+abstract:            ~
+license:             ~
+author:              ~
+generated_by:        ExtUtils::MakeMaker version 6.42
+distribution_type:   module
+requires:     
+    Digest::MD5:                   0
+    Pod::ParseLink:                0
+    Pod::Parser:                   0
+    Text::ParseWords:              0
+    Text::Wrap:                    0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
