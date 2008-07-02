@@ -1,3 +1,16 @@
+=head1 Pod::2::DocBook
+
+    * 0.01 Tue 10 Jun 2008
+        - Applied patches for =for blocks from Perl Training Australia's
+          Pod::DocBook repository. (pjf)
+        - Updated t/Pod-2-Docbook.t for more streamlined testing. (pjf)
+        - Corrected POD errors in Changes file. (pjf)
+        - xml validity fix, full DOCTYPE (yanick)
+
+=back
+
+=head1 OLD Pod::DocBook
+
 =head1 v1.2
 
 =over
@@ -11,6 +24,8 @@ Renamed module to Pod::2::DocBook 0.01
 Released Pod::DocBook 1.2
 
 Added missing test files
+
+=back
 
 =head1 v1.1
 

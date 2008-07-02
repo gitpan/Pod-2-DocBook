@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 use Test;
-BEGIN { plan tests => 18 };
+BEGIN { plan tests => 19 };
 
 use Pod::2::DocBook;
 ok 1;
@@ -16,7 +16,8 @@ ok 1;
 
 my @samples = qw(head paragraphs indent lists docbook table formatting_codes
 		 e_command e_nested_fc e_unknown_fc e_empty_l e_escape
-		 e_item e_mismatched_end e_no_end e_colspec);
+		 e_item e_mismatched_end e_no_end e_colspec
+		 for);
 
 foreach my $name (@samples) {
     my $parser = Pod::2::DocBook->new (doctype           => 'section',
@@ -27,9 +28,7 @@ foreach my $name (@samples) {
 
     $parser->parse_from_file ("t/$name.pod", "t/test-$name.out");
 
-    ok (check ("t/$name.sgml", "t/test-$name.out"), 1,
-	"t/test-$name.out differs from t/$name.sgml") &&
-	  unlink "t/test-$name.out";
+    check_ok($name);
 }
 
 #-----------------------------------------------------------------------
@@ -43,10 +42,21 @@ Pod::2::DocBook->new (doctype           => 'section',
 		   spaces            => 2)
             ->parse_from_file ("t/no_header.pod", "t/test-no_header.out");
 
-ok (check ("t/no_header.sgml", "t/test-no_header.out"), 1,
-    "t/test-no_header.out differs from t/no_header.sgml") &&
-  unlink "t/test-no_header.out";
+check_ok("no_header");
 
+# Calls check(), and unlinks temp files on success.
+
+sub check_ok
+{
+    my ($name) = @_;
+
+    ok(
+        check( "t/$name.sgml", "t/test-$name.out" ), 1,
+        "t/test-$name.out differs from t/$name.sgml"
+    ) && unlink("t/test-$name.out");
+}
+
+# Checks files for differences.
 
 sub check
 {
