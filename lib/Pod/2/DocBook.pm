@@ -6,11 +6,14 @@ Pod::2::DocBook - Convert Pod data to DocBook SGML
 
 =head1 SYNOPSIS
 
-  use Pod::2::DocBook;
-  my $parser = Pod::2::DocBook->new (title             => 'My Article',
-                                     doctype           => 'article',
-                  fix_double_quotes => 1,
-                  spaces            => 3);
+    use Pod::2::DocBook;
+    my $parser = Pod::2::DocBook->new(
+        title             => 'My Article',
+        doctype           => 'article',
+        base_id           => 'article42'
+        fix_double_quotes => 1,
+        spaces            => 3
+    );
 
   $parser->parse_from_file ('my_article.pod', 'my_article.sgml');
 
@@ -80,7 +83,7 @@ use Text::Wrap;
 =cut
 
 our @ISA     = qw(Pod::Parser);
-our $VERSION = '0.02_01';
+our $VERSION = '0.02_02';
 
 
 #----------------------------------------------------------------------
@@ -94,8 +97,13 @@ Initialize parser.
 =cut
 
 sub initialize {
-    $_[0]->errorsub ('error_msg');
-    $_[0]->{'Pod::2::DocBook::errors'} = [];
+    my $parser = shift;
+
+    $parser->errorsub ('error_msg');
+    $parser->{'Pod::2::DocBook::errors'} = [];
+
+    $parser->{title}  ||= q{};
+    $parser->{spaces} ||= 0;
 }
 
 
@@ -139,7 +147,16 @@ END_HEADER
                      "</refmeta>\n");
     }
     else {
-        print $out_fh "<$parser->{doctype}><title>$parser->{title}</title>\n";
+        print
+            $out_fh
+            '<',
+            $parser->{doctype},
+            ($parser->{base_id} ? ' id="'.$parser->{base_id}.'"' : ()),
+            '><title>',
+            $parser->{title},
+            '</title>',
+            "\n"
+        ;
     }
 }
 
@@ -320,7 +337,6 @@ sub textblock {
         $paragraph =~ s/\s*\n\s*/ /g;           # don't just wrap, fill
     
         {
-            no warnings qw/ uninitialized /;
             $para_out = $parser->_indent;
 
             my $padding = ' ' x ($parser->{spaces} * $parser->{indentlevel});
@@ -400,7 +416,7 @@ sub verbatim {
     elsif ($state eq 'name') {
         my ($name, $purpose) = split (/\s*-\s*/, $paragraph, 2);
    
-        no warnings qw/ uninitialized /; # $purpose can be empty
+        $purpose ||= q{}; # $purpose can be empty
 
         print $out_fh $parser->_indent,
                         "<refnamediv>\n",
@@ -555,26 +571,26 @@ sub error_msg {
 
 sub _indent {
     my ($parser) = @_;
-    no warnings qw/ uninitialized /;
     return (' ' x ($parser->{spaces} * $parser->{indentlevel}++));
 }
 
 sub _outdent {
     my ($parser) = @_;
-    no warnings qw/ uninitialized /;
     return (' ' x (--$parser->{indentlevel} * $parser->{spaces}));
 }
 
 sub _current_indent {
     my $parser = shift;
-
-    no warnings qw/ uninitialized /;
     return ' ' x ($parser->{spaces} * $parser->{indentlevel});
 }
 
 sub _make_id {
     my $parser = shift;
-    my $string = join ('-', $parser->{doctype}, $parser->{title}, $_[0]);
+    my $string = join '-', 
+                      $parser->{doctype}, 
+                      $parser->{title}, 
+                      $_[0],
+                      ++$parser->{section_instance};
 
     $string =~ s/<!\[CDATA\[(.+?)\]\]>/$1/g;
     $string =~ s/<.+?>//g;

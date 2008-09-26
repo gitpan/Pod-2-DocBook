@@ -6,6 +6,7 @@ WriteMakefile
           'VERSION_FROM' => 'lib/Pod/2/DocBook.pm',
           'PREREQ_PM' => {
                            'Digest::MD5' => 0,
+                           'List::MoreUtils' => 0,
                            'Pod::ParseLink' => 0,
                            'Pod::Parser' => 0,
                            'Test::More' => 0,
