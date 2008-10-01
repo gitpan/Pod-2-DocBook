@@ -75,6 +75,36 @@ METHODS
   error_msg
     Returns parser error message(s) if any occured.
 
+  make_id($text)
+    Function will construct an element id string. Id string is composed of
+    "join (':', $parser->{base_id}, $text)", where $text in most cases is
+    the pod heading text.
+
+    The xml id string has strict format. Checkout "cleanup_id" function for
+    specification.
+
+  make_uniq_id($text)
+    Calls "$parser->make_id($text)" and checks if such id was already
+    generated. If so, generates new one by adding _i1 (or _i2, i3, ...) to
+    the id string. Return value is new uniq id string.
+
+  cleanup_id($id_string)
+    This function is used internally to remove/change any illegal characters
+    from the elements id string. (see
+    http://www.w3.org/TR/2000/REC-xml-20001006#NT-Name for the id string
+    specification)
+
+        $id_string =~ s/<!\[CDATA\[(.+?)\]\]>/$1/g;   # keep just inside of CDATA
+        $id_string =~ s/<.+?>//g;                     # remove tags
+        $id_string =~ s/^\s*//;                       # ltrim spaces
+        $id_string =~ s/\s*$//;                       # rtrim spaces
+        $id_string =~ tr{/ }{._};                     # replace / with . and spaces with _
+        $id_string =~ s/[^\-_a-zA-Z0-9\.: ]//g;       # closed set of characters allowed in id string
+
+    In the worst case when the $id_string after clean up will not conform
+    with the specification, warning will be printed out and random number
+    with leading colon will be used.
+
 POD TO DOCBOOK TRANSLATION
     Pod is a deceptively simple format; it is easy to learn and very
     straightforward to use, but it is suprisingly expressive. Nevertheless,
