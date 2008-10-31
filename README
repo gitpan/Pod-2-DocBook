@@ -49,7 +49,7 @@ DESCRIPTION
     Pod::Parser.
 
 METHODS
-        our @ISA     = qw(Pod::Parser);
+        use base 'Pod::Parser';
 
   initialize()
     Initialize parser.

@@ -1,6 +1,6 @@
 ---
 name: Pod-2-DocBook
-version: 0.02_03
+version: 0.02
 author:
   - 'Jozef Kutej <jkutej@cpan.org>'
 abstract: Convert Pod data to DocBook SGML
@@ -20,7 +20,7 @@ build_requires:
 provides:
   Pod::2::DocBook:
     file: lib/Pod/2/DocBook.pm
-    version: 0.02_03
+    version: 0.02
 generated_by: Module::Build version 0.280801
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

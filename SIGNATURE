@@ -17,9 +17,9 @@ Hash: SHA1
 SHA1 8ba43b3bd08b43dee6f623b8cee92beec5acf8ff Build.PL
 SHA1 aa883fd6f237b9a3c32ef0b5a9c534f5e91506a2 Changes
 SHA1 1aca33c203779f2b2c739df4fcb90d4aa4c93640 MANIFEST
-SHA1 621283603a83168b0de5c34786e5d56936a9bb51 META.yml
+SHA1 c9594dd1473a5c4c9c946ba6e43340d8822028de META.yml
 SHA1 276966d086e4246afe586486d01a8e4fc9a756f7 Makefile.PL
-SHA1 e41fbeb33378297d56cc08509e7afd2d004e5a7b README
+SHA1 3ebc70e18302ad769d735fb3df29ae922d514966 README
 SHA1 67f2e4b37762f178008ed5379fce24ca449037ab doc/Pod-2-DocBook.html
 SHA1 212c6952540af848f50cb889ed454e7a1bf2d9cd doc/Pod-2-DocBook.pdf
 SHA1 a7661645db2095e29ebde300886b1a2ae87e325b doc/docbook.css
@@ -45,8 +45,8 @@ SHA1 669364718285082670bf1e16347bd717f5934c2f examples/pod2docbook-docbook/image
 SHA1 fa61be8935532c4b2b37d3d3e18e69f5c0c69cad examples/pod2docbook-docbook/images/warning.png
 SHA1 1b53e4cd84ede8267477cee6168efce3fef5c8b8 examples/pod2docbook-docbook/images/warning.svg
 SHA1 ea1fab12c887b8edd139b793fe9b26307331f7eb examples/pod2docbook-docbook/xinclude.mod
-SHA1 10cd797a34e6a696594d6b892d24d3c87fc57056 lib/Pod/2/DocBook.pm
-SHA1 286286daa84b6d8b2ba190500255e23b99e6cc3c pod2docbook
+SHA1 9434d420f4d31c9f75f1783a5ae13289e286abe5 lib/Pod/2/DocBook.pm
+SHA1 c8f571a828065210d104d153378c31f6091ca825 pod2docbook
 SHA1 605f05a5336cc37a476bb10b218f5ad1a2bd340d t/00-compile.t
 SHA1 4d2709e5fdc6d4fd185efc37258922c12fdeb02a t/02-Pod-2-DocBook-make_id.t
 SHA1 9994be45692ea5aea758c86d35fa0efbc4abb0c7 t/Pod-2-DocBook.t
@@ -87,8 +87,8 @@ SHA1 f435a48ffb0b7c9000ccd9fb3dcb5886c0333465 t/no_header.sgml
 SHA1 ec7be9548d281ed0686799a7c2fec4bbb25ade31 t/paragraphs.pod
 SHA1 137637eba8890e500115589c2c80526639a8613a t/paragraphs.sgml
 SHA1 491d4b09cb94c1e722f7437445a1b5353c52e07c t/perlcritic.t
-SHA1 30f1b5d0736ba4529fd99475e2807fdb033a3c61 t/perlcriticrc
-SHA1 c26c5d4531effe5859ca35271645bfec5db7ff5c t/perltidy.conf
+SHA1 aa3b8c1b81de9de8b414daf97e9f98e8cab12a7e t/perlcriticrc
+SHA1 5aa1ab0c95f16a7e29e92898ee97e9dccf15a9b7 t/perltidy.conf
 SHA1 0b1c5a2d59be6bfa7d60c64cd964fea6a0331705 t/pod-coverage.t
 SHA1 469afd9049b94527619a02194b0ccde0824f6c0a t/pod-spell.t
 SHA1 640935336dc1123c0069bcf5432bcaedc2cf22d3 t/pod.t
@@ -100,7 +100,7 @@ SHA1 0991a2f92c844fea6528d30c5a09d985fb9d9fbb t/valid_xml.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.9 (GNU/Linux)
 
-iEYEARECAAYFAkjjleEACgkQC0OgUPgL2SfvYgCgrP3/W+mHkFj1tXekBEN1JKsn
-T9MAn2sWjkRAd3/lTm7p0csVNom3dCCa
-=JJWk
+iEYEARECAAYFAkkLP64ACgkQC0OgUPgL2SeINQCcDKXVOgKJ1fPBCSeh83Z53RWT
+2ewAoJboJnfxvSDbQM8290ud4ePy/Xjv
+=+Xt/
 -----END PGP SIGNATURE-----
