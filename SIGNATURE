@@ -14,12 +14,12 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 8ba43b3bd08b43dee6f623b8cee92beec5acf8ff Build.PL
+SHA1 cf421e7152e131e496e9321282266a57e02c52a3 Build.PL
 SHA1 aa883fd6f237b9a3c32ef0b5a9c534f5e91506a2 Changes
 SHA1 1aca33c203779f2b2c739df4fcb90d4aa4c93640 MANIFEST
-SHA1 c9594dd1473a5c4c9c946ba6e43340d8822028de META.yml
-SHA1 276966d086e4246afe586486d01a8e4fc9a756f7 Makefile.PL
-SHA1 3ebc70e18302ad769d735fb3df29ae922d514966 README
+SHA1 2861205cec931366c5fc8499cc3c7a3fe2769b4e META.yml
+SHA1 6813836f34679c5889b4f90963d80be1b5c2931d Makefile.PL
+SHA1 8c09cfe114aad4e918f8fd52d714c6425f5201ad README
 SHA1 67f2e4b37762f178008ed5379fce24ca449037ab doc/Pod-2-DocBook.html
 SHA1 212c6952540af848f50cb889ed454e7a1bf2d9cd doc/Pod-2-DocBook.pdf
 SHA1 a7661645db2095e29ebde300886b1a2ae87e325b doc/docbook.css
@@ -45,11 +45,11 @@ SHA1 669364718285082670bf1e16347bd717f5934c2f examples/pod2docbook-docbook/image
 SHA1 fa61be8935532c4b2b37d3d3e18e69f5c0c69cad examples/pod2docbook-docbook/images/warning.png
 SHA1 1b53e4cd84ede8267477cee6168efce3fef5c8b8 examples/pod2docbook-docbook/images/warning.svg
 SHA1 ea1fab12c887b8edd139b793fe9b26307331f7eb examples/pod2docbook-docbook/xinclude.mod
-SHA1 9434d420f4d31c9f75f1783a5ae13289e286abe5 lib/Pod/2/DocBook.pm
-SHA1 c8f571a828065210d104d153378c31f6091ca825 pod2docbook
+SHA1 5f261b0ef300c56c2fe9aa0f1fb3d04a2a753b0c lib/Pod/2/DocBook.pm
+SHA1 837356391907a68bb83d0a56f136bd1101b09eae pod2docbook
 SHA1 605f05a5336cc37a476bb10b218f5ad1a2bd340d t/00-compile.t
 SHA1 4d2709e5fdc6d4fd185efc37258922c12fdeb02a t/02-Pod-2-DocBook-make_id.t
-SHA1 9994be45692ea5aea758c86d35fa0efbc4abb0c7 t/Pod-2-DocBook.t
+SHA1 076a69f45d57c793ea467d43da679e5864f868d8 t/Pod-2-DocBook.t
 SHA1 41533fbd463e42d2ecf1e119eca910c16809d13e t/distribution.t
 SHA1 3b5a173c28fc02ab9285bb25421e551a1e04870e t/docbook.pod
 SHA1 cfb0724564a8b19b5c48a20a31651364e334c589 t/docbook.sgml
@@ -75,7 +75,7 @@ SHA1 2405c4385dc40c2e78dfa56cd11ae831dfc72455 t/for.pod
 SHA1 f0a5c0787cb9572135e24a638a3335aa7233bfe1 t/for.sgml
 SHA1 09995acec1da0d303828ccf75c40f27a8a0f1e66 t/formatting_codes.pod
 SHA1 e183ba5766b088020c87651ec895f2146e8207d9 t/formatting_codes.sgml
-SHA1 afa5905849a068df900e1a5c230604d51a998669 t/head.pod
+SHA1 8b7fbde8a1418fc8676dbbe87651f452c58fa61d t/head.pod
 SHA1 5f247b3a0f13e05a1d6b82884751dbe9113cdae3 t/head.sgml
 SHA1 d8680657894d4ea7929a8360ad66a44a5d70f36e t/indent.pod
 SHA1 754ead1b97ef0e16c204e0c2d49e86aa15ca77a2 t/indent.sgml
@@ -100,7 +100,7 @@ SHA1 0991a2f92c844fea6528d30c5a09d985fb9d9fbb t/valid_xml.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.9 (GNU/Linux)
 
-iEYEARECAAYFAkkLP64ACgkQC0OgUPgL2SeINQCcDKXVOgKJ1fPBCSeh83Z53RWT
-2ewAoJboJnfxvSDbQM8290ud4ePy/Xjv
-=+Xt/
+iEYEARECAAYFAkn8TjYACgkQC0OgUPgL2SfRCwCfaT1jEGUWa0ZaxdE93PiZPAd+
+6rIAoKXh/MxskIFXu+eUrHQ2sGjLYf4x
+=dfL7
 -----END PGP SIGNATURE-----

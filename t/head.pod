@@ -14,6 +14,10 @@ Contents of section 1.1
 
 Contents of section 2
 
+=head2 SKIP
+
+Contents to be skipped
+
 =head2 2.1
 
 Contents of section 2.1
@@ -22,6 +26,10 @@ Contents of section 2.1
 
 Contents of section 2.1.1
 
+=head4 SKIP2
+
+Contents to be skipped
+
 =head3 2.2
 
 Contents of section 2.2
@@ -29,3 +37,14 @@ Contents of section 2.2
 =head1 3
 
 Contents of section 3
+
+=head1 SKIP
+
+Contents to be skipped
+
+=begin testing
+
+
+=end testing
+
+=cut
